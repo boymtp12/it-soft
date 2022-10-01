@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <!--    Tiles ADMINNNNNNNNNNNNN-->
+    <!--main-layout-->
+    <definition name="admin-main-layout" template="/WEB-INF/admin/adminlayouts/index_admin.jsp">
+        <put-attribute name="title_admin" value="Spec edu"/>
+        <put-attribute name="main_layout_admin" value="/WEB-INF/admin/adminlayouts/main_layout_admin.jsp"/>
+    </definition>
+
+    <!--index-layout-->
+    <definition name="admin-index-layout" extends="admin-main-layout">
+        <put-attribute name="header_admin" value="/WEB-INF/admin/adminbasefragments/header_admin.jsp" cascade="true"/>
+        <put-attribute name="footer_admin" value="/WEB-INF/admin/adminbasefragments/footer_admin.jsp" cascade="true"/>
+    </definition>
+
+    <!--Trang Chu-->
+    <definition name="admin-trang-chu" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Trang chủ"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/home_admin.jsp" cascade="true"/>
+    </definition>
+
+    <!--login-->
+    <definition name="admin-dang-nhap" template="/WEB-INF/admin/adminlayouts/index_admin.jsp">
+        <put-attribute name="title_admin" value="Đăng Nhập"/>
+        <put-attribute name="main_layout_admin" value="/WEB-INF/admin/adminbodyfragments/login_admin.jsp"/>
+    </definition>
+
+    <!--list học vien dang ky khoa học-->
+    <definition name="admin-list-student" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Danh sách học viên"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/list_student_admin.jsp"
+                       cascade="true"/>
+    </definition>
+
+    <!--list học vien dang ky khoa học-->
+    <definition name="admin-detail-student" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Học viên"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/detail_student_admin.jsp"
+                       cascade="true"/>
+    </definition>
+    <!--Topic-->
+    <definition name="admin-topic" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Thêm bài viết"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/topic_admin.jsp" cascade="true"/>
+    </definition>
+    <!--up load image-->
+    <definition name="admin-upload-file" extends="admin-index-layout">
+        <put-attribute name="title_admin" value=" Up load image"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminuploadfile/upload_admin.jsp" cascade="true"/>
+    </definition>
+    <!--list hoc vien yeu cau tu van-->
+    <definition name="admin-advisory-infor" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Danh sách tư vấn"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/advisory_infor_admin.jsp"
+                       cascade="true"/>
+    </definition>
+    <!--list giang vien-->
+    <definition name="admin-teacher" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Danh sách giảng viên"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/teacher_admin.jsp" cascade="true"/>
+    </definition>
+    <!--list khóa học-->
+    <definition name="admin-course" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Danh sách khóa học"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/course_admin.jsp"
+                       cascade="true"/>
+    </definition>
+    <definition name="admin-add-course-college-student" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Danh sách khóa học sinh viên"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/add_course_college_student.jsp"
+                       cascade="true"/>
+    </definition>
+
+    <definition name="admin-phan-mem" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Quản lý phần mềm"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/phan_mem.jsp"
+                       cascade="true"/>
+    </definition>
+
+    <definition name="phieumua-admin" extends="admin-index-layout">
+        <put-attribute name="title_admin" value="Quản lý phiếu mua phần mềm"/>
+        <put-attribute name="body_admin" value="/WEB-INF/admin/adminbodyfragments/phieumua_admin.jsp"
+                       cascade="true"/>
+    </definition>
+    <!-- END Tiles ADMINNNNNNNNNNNNN-->
+
+    <!--    -->
+
+    <!--    Tiles Client-->
+
+    <!--main-layout-->
+    <definition name="main-layout" template="/WEB-INF/client/layouts/index.jsp">
+        <put-attribute name="main_layout" value="/WEB-INF/client/layouts/main_layout.jsp"/>
+    </definition>
+
+
+    <!--index-layout-->
+    <definition name="index-layout" extends="main-layout">
+        <put-attribute name="header" value="/WEB-INF/client/basefragments/header.jsp" cascade="true"/>
+        <put-attribute name="footer" value="/WEB-INF/client/basefragments/footer.jsp" cascade="true"/>
+    </definition>
+
+
+    <!--index native -layout-->
+    <definition name="index-native-layout" extends="main-layout">
+        <put-attribute name="header" value="/WEB-INF/client/basefragments/headernative.jsp" cascade="true"/>
+        <put-attribute name="footer" value="/WEB-INF/client/basefragments/footernative.jsp" cascade="true"/>
+    </definition>
+
+    <!--Trang Chu-->
+    <definition name="trang-chu" extends="index-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/reactnative.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/reactnative.css"/>
+        <put-attribute name="title" value="Trung tâm đào tạo lập trình SPEC Learning"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/home.jsp" cascade="true"/>
+    </definition>
+    <!--giangvien-->
+    <definition name="giangvien" extends="index-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/stylegiangvien.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/stylegiangvien.css"/>
+        <put-attribute name="title" value="Giảng Viên"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/giangvien.jsp" cascade="true"/>
+    </definition>
+    <!--xemthem-->
+    <definition name="xemthem" extends="index-layout">
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/stylexemthem.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/stylexemthem.css"/>
+
+        <put-attribute name="title" value="Xem Thêm"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/xemthem.jsp" cascade="true"/>
+    </definition>
+    <!--xemthem-->
+    <definition name="tintuc" extends="index-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/tintuc.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/tintuc.css"/>
+
+
+        <put-attribute name="title" value="Tin Tức"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/tintuc.jsp" cascade="true"/>
+    </definition>
+    <!--chi tiết tin tức-->
+    <definition name="tintuc_java" extends="index-layout">
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/tintuc_khoahoc.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/tintuc_khoahoc.css"/>
+        <put-attribute name="title" value="Tin Tức"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/detail_tintuc.jsp" cascade="true"/>
+    </definition>
+    <!--chi tiết pm-->
+    <definition name="chi-tiet-phan-mem" extends="index-layout">
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/tintuc_khoahoc.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/tintuc_khoahoc.css"/>
+        <put-attribute name="title" value="Chi tiết phần mềm"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/chi_tiet_phan_mem.jsp" cascade="true"/>
+    </definition>
+
+    <!--android cơ bản-->
+    <definition name="react-native" extends="index-native-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/reactnative.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/reactnative.css"/>
+
+
+        <put-attribute name="title" value="Spec khóa học Android Tutorial"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/reactnative.jsp" cascade="true"/>
+    </definition>
+
+    <!--Khoa hoc c#-->
+    <definition name="khoa-hoc-c#" extends="index-native-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/reactnative.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/reactnative.css"/>
+
+        <put-attribute name="title" value="Spec khóa học C Sharp"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/khoahoccsharp.jsp" cascade="true"/>
+    </definition>
+    <!--Khoa hoc c# nang cao -->
+    <definition name="khoa-hoc-c#-nang-cao" extends="index-native-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/reactnative.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/reactnative.css"/>
+
+
+        <put-attribute name="title" value="Spec khóa học C Sharp"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/khoa_hoc_c_sharp_nang_cao.jsp" cascade="true"/>
+    </definition>
+    <definition name="khoa-hoc-java-co-ban" extends="index-native-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/reactnative.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/reactnative.css"/>
+
+
+        <put-attribute name="title" value="Spec khóa học Java cơ bản"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/java_co_ban.jsp" cascade="true"/>
+    </definition>
+
+    <!--Khoa hoc tre em-->
+    <definition name="course" extends="index-layout">
+
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/minecraft.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/minecraft.css"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/course.jsp" cascade="true"/>
+    </definition>
+    <!--    Xem them phan mem-->
+    <definition name="phanmem-xemthem" extends="index-layout">
+        <!--                <put-attribute name="css" value="https://spec.edu.vn/client/css/stylephanmem.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/stylephanmem.css"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/phanmem_xemthem.jsp" cascade="true"/>
+    </definition>
+    <!--    Giỏ hàng phần mềm-->
+    <definition name="cart" extends="index-layout">
+        <!--        <put-attribute name="css" value="https://spec.edu.vn/client/css/stylephanmem.css"/>-->
+        <put-attribute name="css" value="http://localhost:9092/client/css/stylephanmem.css"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/cart_phanmem.jsp" cascade="true"/>
+    </definition>
+
+    <!--    detail something-->
+    <definition name="detail-something" extends="index-layout">
+        <put-attribute name="css" value="http://localhost:9092/client/css/tintuc_khoahoc.css"/>
+        <put-attribute name="title" value="Chi tiết"/>
+        <put-attribute name="body" value="/WEB-INF/client/bodyfragments/detail_something.jsp" cascade="true"/>
+    </definition>
+
+</tiles-definitions>
